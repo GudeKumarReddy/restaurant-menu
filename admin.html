@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Restaurant Menu Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+    <!-- LOGIN -->
+
+    <section
+        id="loginCard"
+        class="card"
+    >
+
+        <h1>
+            Restaurant Menu Admin
+        </h1>
+
+        <p>
+            Enter admin password.
+        </p>
+
+        <input
+            id="password"
+            type="password"
+            placeholder="Password"
+        >
+
+        <button id="loginBtn">
+            Login
+        </button>
+
+        <p
+            id="loginMessage"
+            class="error"
+        ></p>
+
+    </section>
+
+
+    <!-- DASHBOARD -->
+
+    <section
+        id="dashboard"
+        class="hidden"
+    >
+
+
+        <div class="topbar">
+
+            <h1>
+                Menu Admin
+            </h1>
+
+            <button
+                id="logoutBtn"
+                class="secondary"
+            >
+                Logout
+            </button>
+
+        </div>
+
+
+        <!-- SETTINGS -->
+
+        <section class="card">
+
+            <h2>
+                Restaurant Settings
+            </h2>
+
+
+            <label>
+                Restaurant Name
+
+                <input
+                    id="restaurant_name"
+                >
+
+            </label>
+
+
+            <label>
+                Location
+
+                <input
+                    id="location"
+                >
+
+            </label>
+
+
+            <label>
+                Phone
+
+                <input
+                    id="phone"
+                >
+
+            </label>
+
+
+            <label>
+                Description
+
+                <textarea
+                    id="description"
+                ></textarea>
+
+            </label>
+
+
+            <button
+                id="saveSettingsBtn"
+            >
+                Save Settings
+            </button>
+
+
+            <p
+                id="settingsMessage"
+            ></p>
+
+        </section>
+
+
+        <!-- CATEGORIES -->
+
+        <section class="card">
+
+            <h2>
+                Categories
+            </h2>
+
+
+            <form
+                id="categoryForm"
+            >
+
+                <input
+                    type="hidden"
+                    id="categoryId"
+                >
+
+
+                <label>
+                    Category Name
+
+                    <input
+                        id="categoryName"
+                        required
+                    >
+
+                </label>
+
+
+                <label>
+                    Display Order
+
+                    <input
+                        id="categoryOrder"
+                        type="number"
+                        min="1"
+                        value="1"
+                        required
+                    >
+
+                </label>
+
+
+                <label class="check">
+
+                    <input
+                        id="categoryActive"
+                        type="checkbox"
+                        checked
+                    >
+
+                    Active
+
+                </label>
+
+
+                <button
+                    type="submit"
+                >
+                    Save Category
+                </button>
+
+
+                <button
+                    type="button"
+                    id="cancelCategory"
+                    class="secondary hidden"
+                >
+                    Cancel
+                </button>
+
+            </form>
+
+
+            <div
+                id="categoryList"
+            ></div>
+
+        </section>
+
+
+        <!-- MENU ITEMS -->
+
+        <section class="card">
+
+            <h2>
+                Menu Items
+            </h2>
+
+
+            <form
+                id="itemForm"
+            >
+
+                <input
+                    type="hidden"
+                    id="itemId"
+                >
+
+
+                <label>
+                    Item Name
+
+                    <input
+                        id="itemName"
+                        required
+                    >
+
+                </label>
+
+
+                <label>
+                    Category
+
+                    <select
+                        id="itemCategory"
+                        required
+                    ></select>
+
+                </label>
+
+
+                <label>
+                    Description
+
+                    <textarea
+                        id="itemDescription"
+                    ></textarea>
+
+                </label>
+
+
+                <label>
+                    Price
+
+                    <input
+                        id="itemPrice"
+                        type="number"
+                        min="0"
+                        step="1"
+                        required
+                    >
+
+                </label>
+
+
+                <label>
+                    Food Photo
+
+                    <input
+                        id="itemPhoto"
+                        type="file"
+                        accept="image/*"
+                    >
+
+                </label>
+
+
+                <label>
+                    Display Order
+
+                    <input
+                        id="itemOrder"
+                        type="number"
+                        min="1"
+                        value="1"
+                        required
+                    >
+
+                </label>
+
+
+                <label class="check">
+
+                    <input
+                        id="itemAvailable"
+                        type="checkbox"
+                        checked
+                    >
+
+                    Available
+
+                </label>
+
+
+                <button
+                    type="submit"
+                >
+                    Save Item
+                </button>
+
+
+                <button
+                    type="button"
+                    id="cancelItem"
+                    class="secondary hidden"
+                >
+                    Cancel
+                </button>
+
+            </form>
+
+
+            <p
+                id="itemMessage"
+            ></p>
+
+
+            <div
+                id="itemList"
+            ></div>
+
+        </section>
+
+    </section>
+
+</div>
+
+
+<script src="config.js"></script>
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>
